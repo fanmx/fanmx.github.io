@@ -11,8 +11,30 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -74,7 +96,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="米雪的前端博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="米雪的前端个人博客" type="application/atom+xml">
 
 
 
@@ -83,13 +105,13 @@
 
 <meta name="description" content="Web前端博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="米雪的前端博客">
+<meta property="og:title" content="米雪的前端个人博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="米雪的前端博客">
+<meta property="og:site_name" content="米雪的前端个人博客">
 <meta property="og:description" content="Web前端博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="米雪的前端博客">
+<meta name="twitter:title" content="米雪的前端个人博客">
 <meta name="twitter:description" content="Web前端博客">
 
 
@@ -126,7 +148,7 @@
 
 
 
-  <title>米雪的前端博客</title>
+  <title>米雪的前端个人博客</title>
   
 
 
@@ -161,12 +183,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">米雪的前端博客</span>
+        <span class="site-title">米雪的前端个人博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">博客</p>
+        <p class="site-subtitle"></p>
       
   </div>
 
@@ -201,7 +223,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            文章
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于我
           </a>
         </li>
       
@@ -238,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fanmx">
@@ -247,7 +279,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米雪的前端博客">
+      <meta itemprop="name" content="米雪的前端个人博客">
     </span>
 
     
@@ -257,7 +289,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/03/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/09/06/3/" itemprop="url">Vue/iframe嵌套单页面时打开新窗口并自定义浏览器标题</a></h1>
         
 
         <div class="post-meta">
@@ -269,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T15:48:48+08:00">
-                2019-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T19:00:06+08:00">
+                2019-09-06
               </time>
             
 
@@ -309,19 +341,431 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <p>vue打开新窗口两种写法，效果一样：</p>
+<p>第一种： </p>
+<pre><code>&lt;router-link :to=&quot;{ path: &apos;/system/place-mgt&apos;, query: {isDevice: true}}&quot; target=&quot;_blank&quot; tag=&quot;a&quot;&gt;
+   新增设备
+&lt;/router-link&gt;</code></pre><p>router-link 传参用query或者params都可以，tagget和tag一定要加上才可以；</p>
+<p>第二种：</p>
+<pre><code>&lt;a href= &quot;./App.html#/system/place-mgt&quot; target=&quot;_blank&quot; &gt; 新增设备 &lt;/a&gt;</code></pre><p>直接写成a标签就可以了。</p>
+<p> 改变浏览器窗口标题：</p>
+<p>代码如下： </p>
+<pre><code>mounted() {
+　　document.title = &apos;你想要的标题&apos;;
+}</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+    
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+    
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fanmx">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米雪的前端个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/06/2/" itemprop="url">Vue中setTimeout切换浏览器页签时怎么清除解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T18:27:23+08:00">
+                2019-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>大家都知道，vue中有完整的生命周期，this.$router.push(‘’)可以跳到相应的页面中，在beforeDestroy中可以监听到，将定时器清空，又或是通过this._isDestroyed，可以判断出是否还在当前生命周期中，true为不在，false为还在；</p>
+<p>今天要说的是在浏览器打开新窗口的情况下将上一页面的定时器清空；</p>
+<p>代码如下：</p>
+<pre><code>export: {
+
+    methods: {　
+        /***
+         *定时器刷新接口
+         * */
+    　　timeRefresh(){
+            if(this.isLeave) return false;
+       　　  //你所需要定时刷新请求的方法OR接口 5秒一刷新
+        　　 this.refreshData = window.setTimeout(this.timeRefresh, 5000);
+    　　}
+    },
+    mounted() {
+
+　　    this.timeRefresh();
+
+　　    let self = this;
+
+        //此方法可以监听到浏览器切换页面，也就是离开当前页面时的动态；为了保险起见，建议在beforeDestroy中也清空定时器；
+
+    　　document.addEventListener(&apos;visibilitychange&apos;,() =&gt; { //浏览器tab标签切换事件
+
+    　　　　if(document.visibilityState == &apos;hidden&apos;) { //状态判断 没在当前页面呆着
+             　　self.isLeave = true;
+             　　if(self.refreshData) window.clearTimeout(self.refreshData); self.refreshData = null;
+    　　　　　}else { //回来了
+             　self.isLeave = false;
+    　　　　　　self.refreshData = setTimeout(self.timeRefresh, ((new Date).getTime() % 5000));
+         　}
+       });
+    }，
+    data() {
+        return {
+    　　　　isLeave: false,//定义变量判断是否还停留在当前此页面中
+    　　　　refreshData : null,//定时器定义变量
+    　　}
+    }
+}</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fanmx">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米雪的前端个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/06/1/" itemprop="url">Vue本地项目开发过程中webpack打包内存泄漏问题解决方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T18:24:43+08:00">
+                2019-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>编译项目出现如下错误：</p>
+<p>FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory</p>
+<p>原因：</p>
+<p>node的堆内存上限大概在1.7G，如果超过就会出现次错误；</p>
+<p>解决方法：</p>
+<p>全局安装increase-memory-limit</p>
+<p>npm install -g increase-memory-limit</p>
+<p>进入工程目录，执行：</p>
+<p>increase-memory-limit</p>
+<p>即可解决。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fanmx">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="米雪的前端个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/06/hello-world/" itemprop="url">前言</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T18:10:26+08:00">
+                2019-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&ensp;&ensp;Hi！欢迎来到米雪的个人博客，本人系计算机专业妹子一枚，实习期选择了前端，入前端这行已经好几年了，接触的越多之后，你会发现前端涉及的知识面很广，而目前的前端框架层出不穷，需要静下心来去了解，去学习，去实践。采用合适的技术来满足公司产品业务需求。</p>
+<p>&ensp;&ensp;总之前端水很深，需要不断去学习，建议在这个过程中，能把自己学习到的知识点输出，养成写技术博客的习惯，沉下心来好好打磨自己的技术，望共勉！</p>
+<h2 id="一：目的何在？"><a href="#一：目的何在？" class="headerlink" title="一：目的何在？"></a>一：目的何在？</h2><p>&ensp;&ensp;不知道大家有没有这种感觉，大部分的程序猿，喜欢安静的写代码，语言表达能力不是特别好，如果一件事情不能够用通俗、简单的语言说出来或者写出来，证明你并没有全面地掌握或者掌握的深度不够。只有通过知识积累以及共享才能更好地发现自己在知识理解和掌握上的不足。目的和大部分人一样，主要目的有以下2个：</p>
+<p>1、检验自己学习成果，加深对技术的理解；</p>
+<p>2、提高文字的表达能力；</p>
+<h2 id="二：什么时候开始？"><a href="#二：什么时候开始？" class="headerlink" title="二：什么时候开始？"></a>二：什么时候开始？</h2><p>&ensp;&ensp;万事开头难，有人曾说过，种一棵树的最好时机是十年前，其次是现在，开通技术博客同样如此。可能一开始写的比较差劲，对于那些不满意的文章，可以等你技术能力提升了，再删掉重新写，并非是要等到是技术牛人，才有资格写文章吧，个人主要是想记录自己成长轨迹，不断积累，不断充实自己，望共勉！</p>
+<h2 id="三：后记"><a href="#三：后记" class="headerlink" title="三：后记"></a>三：后记</h2><p>&ensp;&ensp;作为程序员，我个人觉得最重要的还是敲代码的能力，以及工作中解决问题的能力，不要为了写博客而写博客，合理利用碎片化时间，千万不要捡了芝麻丢了西瓜！</p>
 
           
         
@@ -405,7 +849,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -481,9 +925,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -493,11 +935,6 @@
 </div>
 
 
-  <div class="powered-by">
-  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-    本站访客数:<span id="busuanzi_value_site_uv"></span>
-  </span>
-  </div>
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
@@ -507,7 +944,6 @@
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
 
 
 
